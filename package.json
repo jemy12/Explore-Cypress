@@ -1,0 +1,30 @@
+{
+  "name": "demo-automation",
+  "version": "1.0.0",
+  "description": "RESTful API testing with Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "./node_modules/.bin/cypress open",
+    "cy:run": "./node_modules/.bin/cypress run --spec ** / *. cy.js",
+    "cy:dashboard": "npx cypress run --record --key f1258f44-375d-43fe-8735-6a764285464a",
+    "cy:report": "npx cypress run --reporter mochawesome",
+    "docker:run": "docker run -it my-cypress-base:1.0.1",
+    "integration:test": "npx cypress run --spec 'cypress/e2e/master_service/**/*.cy.js'",
+    "electron:test": "npx cypress run --spec 'cypress/e2e/UI/*.cy.js'",
+    "chrome:test": "npx cypress run --spec 'cypress/e2e/UI/*.cy.js' --browser chrome",
+    "firefox:test": "npx cypress run --spec 'cypress/e2e/UI/*.cy.js' --browser firefox"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.13.0",
+    "cypress-terminal-report": "^4.1.1",
+    "mocha": "^10.0.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1"
+  },
+  "dependencies": {
+    "chai-json-schema": "^1.5.1"
+  }
+}
